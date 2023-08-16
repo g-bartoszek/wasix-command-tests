@@ -3,9 +3,5 @@
 version = 3
 
 [[package]]
-name = "example-spawn-stdout"
-version = "0.1.0"
-
-[[package]]
-name = "test"
+name = "wasix-command-test"
 version = "0.1.0"

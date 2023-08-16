@@ -1,0 +1,9 @@
+[package]
+name = "example-spawn-stdout"
+version = "0.1.0"
+edition = "2021"
+
+[package.metadata]
+wasm-opt = false
+
+[dependencies]
