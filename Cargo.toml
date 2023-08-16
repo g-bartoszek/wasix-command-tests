@@ -1,5 +1,0 @@
-[workspace]
-members = [
-  "test",
-  "example-spawn-stdout",
-]
