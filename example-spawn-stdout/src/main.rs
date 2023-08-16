@@ -1,13 +1,22 @@
-use std::{io::Read, process::Stdio};
+use std::{
+    io::{Read, Write},
+    process::Stdio,
+};
 
 fn main() {
-    println!("Test piped stdout");
+    println!("Test piped stdin/stdout");
 
-    let mut p = std::process::Command::new("/bin/echo")
-        .arg("TEST MESSAGE")
+    let mut p = std::process::Command::new("/bin/cat")
+        .stdin(Stdio::piped())
         .stdout(Stdio::piped())
         .stderr(Stdio::inherit())
         .spawn()
+        .unwrap();
+
+    p.stdin
+        .as_mut()
+        .unwrap()
+        .write_all("TEST MESSAGE".as_bytes())
         .unwrap();
 
     assert!(p.wait().is_ok());
